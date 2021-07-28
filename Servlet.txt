@@ -1,0 +1,40 @@
+maven testing environment, with junit, apache tomcat, javax.servlet-api
+
+theory htttp
+
+httpservletRequest &response: interfaces that contain the methods to perform
+a request and a response
+
+request dispatcher:the same object is used to request and respond, this mean
+that works fine in same website environment. just as an example imagine
+browser -> s1 -> s2, the request from browser to s1 is the same as the request
+from s1 to s2 and the same to the response.
+
+sendRedirect: similar to the request dispatcher but in this case the
+request and response are send to the browser, to work with different websites
+browser ->s1 & browser ->s2, the browser send request to s1 and get response
+then send request to s2 and receive the response.
+
+URL rewriting: this technique is used in sendRedirect methods in which you 
+rewrite the url of the servlet you are redirecting.
+e.g. response.sendRedirect("url_pattern_of_servlet") -> this take you to the 
+servlet(s2) but does not send any information from the first servlet (s1)
+e.g. response.sendRedirect ("url_pattern_of_servlet?var="+var) -> in this case
+we are associating a variable to the servlet(s2)
+
+httpsession or cookies: these are 2 methods that allow passing values in the 
+sendRedirect methods, but in this case you create a session or a cookie to store
+the values that you are sending to the other servlet (s2).
+
+Servlet Context and Servlet Config: Basically they do the same thing but with 
+different scopes, both are used to get the values of parameters set in the 
+web.xml file, but context is for all the servlets described in the web.xml file
+and config is inside a specific servlet.
+
+Servlet annotation: Instead of writing the servlet name, mapping, init param,...
+in a web.xml file, you can use de servlet annotation to do this by writing
+@webservlet(name=...,urlPatterns=...,initParams=...). xml.version and web-app
+shoudl still be in the web.xml file.
+
+Choosing between dispatcher an redirect depends on you session management
+
