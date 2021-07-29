@@ -1,5 +1,5 @@
 <%@ page import ="packagefolder.Video" import="java.util.List" import="java.util.ArrayList" import="java.io.PrintWriter"
-import="java.io.IOException" %>
+import="java.io.IOException" import="java.sql.*" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +12,7 @@ import="java.io.IOException" %>
 <body>
     <%! List<Video> videos;%>
     <% 
+
     System.out.println("hello");
 
     String name = request.getParameter("name");
@@ -42,6 +43,22 @@ import="java.io.IOException" %>
         || durationStr.trim().length()<1 || duration <=0){
             response.sendError(400,"Missing ['name','url','duration'].");
         }else{
+            // Adding postgresql database
+            Class.forName("org.postgresql.Driver");
+
+            //connection
+            String urldb = "jdbc:postgresql://localhost:5432/videos_test";
+            String username = "postgres";
+            String password = "0123456789";
+            StringBuilder query = new StringBuilder();
+            query.append("insert into video (title, url, duration) values ('"+ name + "', '" + url + "', " + duration + ");");
+            System.out.println(query.toString());
+
+            Connection con = DriverManager.getConnection(urldb, username,password);
+            Statement st = con.createStatement();
+
+            ResultSet rs = st.executeQuery(query.toString());
+
             Video v = new Video(name, url, duration);
             videos.add(v);
         }

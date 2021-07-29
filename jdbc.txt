@@ -1,0 +1,22 @@
+JDBC allow to use databanks in jsp
+
+steps:
+1. import java.sql.*
+2. load and retrieve driver
+   for postgresql -> Driver: org.postgresl.Driver
+   retrieve -> Class.forName("Drivername");
+3. add connection with (url,username,password)  to your database
+   for post...-> 
+	url: jdbc:postgresql://localhost:5432/databasename (5432 default)
+	username:postgres (default)
+	password:0123456789 (not default)
+   Connect with Connection con = DriverManager.getConnection(url,username,password);
+4. Create a Statement for your connection
+   Statement st = con.createStatement();
+   prepared query and callable query can also be used to more complex query
+5. define and execute the query with
+   ResultSet rs = st.executeQuery("select*...") or executeUpdate if the 
+   operation is not suposed to be return like adding items to table.
+
+6. process result
+7. close the connection

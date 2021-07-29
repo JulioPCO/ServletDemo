@@ -13,6 +13,23 @@ import="java.io.IOException"  %>
     <%! List<Video> videos;%>
 
     <% 
+
+    // Adding postgresql database
+    Class.forname("org.postgresql.Driver");
+
+    //connection
+    String url = "jdbc:postgresql://localhost:5432/videos_test";
+    String username = "postgres";
+    String password = "0123456789";
+    StringBuilder query = new StringBuilder();
+    query.append("");
+
+    Connection con = DriverManager.getConnection(url, username,password);
+    Statement st = con.createStatement();
+
+    ResultSet rs = st.executeQuery(query.toString());
+
+
     System.out.println("hello");
     
     System.out.println(session.getAttribute("videos"));
