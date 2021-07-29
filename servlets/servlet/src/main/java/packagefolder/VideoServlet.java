@@ -56,7 +56,6 @@ public class VideoServlet extends HttpServlet{
         }
 
         int size = videos.size();
-        videos.clear();
 
         //sendRedirect
 
@@ -71,8 +70,8 @@ public class VideoServlet extends HttpServlet{
 
         // URL rewriting
         //resp.sendRedirect("compare?size=" + size); 
-
         
+        videos.clear();
     }
 
     @Override

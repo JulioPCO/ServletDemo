@@ -1,0 +1,30 @@
+JSP allows to write html code and integrate with servlet without having to 
+write the html code inside the servlet. Jsp automatically runs a servlet
+class structure inside html.
+
+<%! ... %> -> this is how to declare variables outside get, post,... it is 
+like declaring variables inside the class but not inside the method. this
+structure is called declaration.
+
+<% ... %> -> this is how to write the code on your method (get,post,...), 
+this structure is called scriptlet.
+
+<%@ page attribute="value"  ... %> attributes such as import,extends,...
+are included in the page, this is  called directive there are other directives
+such sd @include and @taglib
+@include file= "filename": allows to include files or others jsp to the jsp 
+@Taglib uri="uri" prefix = "fx": allows to include tags from other uri
+e.g <fx:name> -> tag name from prefix fx in determined uri.
+
+<%= ... %> -> out.print(...), this is an expression
+
+JSP also have implicits builtin objects such as request, response, 
+pagecontext, out(jsp printwriter), session, application(jsp servletcontext)
+ and config. pagecontext allows to set attributes to the page scope,
+ the others are the same as their servlet pairs.
+
+To handle exceptions in jsp a jsp file can be created as a isErrorPage and 
+others jsp can refer the error to this jsp with pageError, both are page 
+attributes.
+
+netbeans is a tool that converts your jsp to servlet

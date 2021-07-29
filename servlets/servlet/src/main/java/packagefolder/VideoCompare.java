@@ -39,6 +39,7 @@ public class VideoCompare  extends HttpServlet{
             System.out.println("No video");
         else
             System.out.println("Has video");
+
     }
 }
 
