@@ -57,14 +57,23 @@ import="java.io.IOException" import="java.sql.*" %>
             Connection con = DriverManager.getConnection(urldb, username,password);
             Statement st = con.createStatement();
 
-            ResultSet rs = st.executeUpdate(query.toString());
+            try{
+                int rs = st.executeUpdate(query.toString());
 
-            Video v = new Video(name, url, duration);
-            videos.add(v);
+                Video v = new Video(name, url, duration);
+                videos.add(v);
+                System.out.println("Added");
+            }catch(Exception e){
+                System.out.println("Video Already exist");
+            }
+            
+
+            st.close();
+            con.close();
         }
 
     session.setAttribute("videos", videos);
-    System.out.println("Added");
+    
 
     %>
 </body>

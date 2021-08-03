@@ -1,0 +1,17 @@
+jstl -> jsp standart tag library
+
+allows to communicate the servlet with the jsp file without having to write
+their respective code on the other one (servlet + html and jspo + java).
+
+jsp need the <%@ taglib prefix="any" uri ="http://java.sun.com/jsp/jstl" %>
+
+jar file -> jstl-1.2 e javax. ... .jstl
+
+tags
+
+<any:out ... > -> we use the prefix to identify the jstl tag and then we input
+a command such as out, there are many more.
+
+it is possible to send objects from the servlet, but to get the values it is
+necessary a getter and setter and we extract the object value with the command
+${object.value}

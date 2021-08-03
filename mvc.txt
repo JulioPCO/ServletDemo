@@ -1,0 +1,8 @@
+The procedure to create a backend application with servlets and jsp is not
+separated as in this file, usually the servlet get the request from the 
+client, then if there is any operation on database the servlet info goes to
+the service class and after to the DAO class and then to the database.
+After performing the operations in the servlet, the data is sent to the jsp
+in order to send this data it uses a POJO (plain old java object) to store the
+data and the jsp uses this information to send the response to the client with
+the layout of the page.

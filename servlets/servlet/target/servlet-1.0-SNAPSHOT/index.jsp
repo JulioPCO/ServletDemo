@@ -13,7 +13,7 @@
     <input type="text" name="name">
     <input type="text" name="url">
     <input type="text" name="duration">
-    <button>Submit</button>
+    <button>Submit jsp</button>
 </form>
 
 <form action="ErrorTest.jsp">
@@ -26,6 +26,10 @@
 
 <form action="Video.jsp">
     <button>Retrieve jsp</button>
+</form>
+
+<form action="JSTL">
+    <button>JSTL test</button>
 </form>
 </body>
 </html>

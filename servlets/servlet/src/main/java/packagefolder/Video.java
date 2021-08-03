@@ -35,4 +35,9 @@ public class Video {
         this.name = name;
     }
 
+    @Override
+    public String toString(){
+        return "video [ name: " + name + ", url: " + url + ", duration: " + duration +"]";
+    }
+
 }
