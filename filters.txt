@@ -1,0 +1,8 @@
+filters are located between client and servlet and perform operations before
+entering the servlet, e.g log, security check... Filters allow to generalize
+operations for a group of servlets and avoid having to perform the operation
+inside each servlet.
+
+There can be multiple filters inbetween client and servlet and a filterchain
+is necessary to organize the order of filters
+

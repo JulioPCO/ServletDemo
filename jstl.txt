@@ -3,7 +3,13 @@ jstl -> jsp standart tag library
 allows to communicate the servlet with the jsp file without having to write
 their respective code on the other one (servlet + html and jspo + java).
 
-jsp need the <%@ taglib prefix="any" uri ="http://java.sun.com/jsp/jstl" %>
+jsp need the <%@ taglib prefix="any" uri ="http://java.sun.com/jsp/jstl/core" %>
+
+there are 3 main tags to use core,sql and function
+core: are the core tags of jstl such as out to print, forEach to iterate
+sql: allows to connect to database and perform query and operations
+function: has some string functions such as length, split ...
+
 
 jar file -> jstl-1.2 e javax. ... .jstl
 
@@ -15,3 +21,17 @@ a command such as out, there are many more.
 it is possible to send objects from the servlet, but to get the values it is
 necessary a getter and setter and we extract the object value with the command
 ${object.value}
+
+core: 
+<c:forEach items = "${label}" var = "s">
+        ${s} <br>
+</c:forEach>
+
+sql:
+<!--Setting database-->
+<sql:setDataSource var ="db" driver ="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/videos_test" user = "postgres" password = "0123456789"/>
+<!--querying and storing result statement in rs-->
+<sql:query var = "rs" dataSource="${db}">select * from video</sql:query>
+
+function:
+${function:length(str)}

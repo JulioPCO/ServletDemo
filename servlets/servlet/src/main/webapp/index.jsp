@@ -31,5 +31,19 @@
 <form action="JSTL">
     <button>JSTL test</button>
 </form>
+
+<form action="Login.jsp" >
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <button>Login</button>
+</form>
+
+<form action="Private.jsp">
+    <button>need login</button>
+</form>
+
+<form action="Logout">
+    <button>logout</button>
+</form>
 </body>
 </html>
