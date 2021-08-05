@@ -32,9 +32,9 @@
     <button>JSTL test</button>
 </form>
 
-<form action="Login.jsp" >
+<form action="Login.jsp" method ="post">
     <input type="text" name="username">
-    <input type="text" name="password">
+    <input type="password" name="password">
     <button>Login</button>
 </form>
 

@@ -8,10 +8,19 @@
 </head>
 <body>
     <%
+        response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); //Works in HTTP 1.1
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+        response.setHeader("Expires","0");// Proxies
+
         if(session.getAttribute("user")==null){
             response.sendRedirect("index.jsp");
         }
     %>
     welcome
+
+    <form action="index.jsp">
+        <button type="submit" value="back"></button>
+    </form>
+    
 </body>
 </html>
