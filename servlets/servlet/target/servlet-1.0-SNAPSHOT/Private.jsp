@@ -19,7 +19,7 @@
     welcome
 
     <form action="index.jsp">
-        <button type="submit" value="back"></button>
+        <button type="submit" value="back">back</button>
     </form>
     
 </body>

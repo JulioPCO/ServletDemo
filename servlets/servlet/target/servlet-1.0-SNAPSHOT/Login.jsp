@@ -15,6 +15,8 @@
 <body>
     
     ${param.username} <br>
+    <!--This is not best practice, it would be better to create a DAO(data acces object) class to verify if the login is successfull-->
+    <!--the DAO is just a java class that access the data base and if credentials are correct returns a boolean true-->
     <!--Setting database-->
     <sql:setDataSource var ="db" driver ="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/videos_test" user = "postgres" password = "0123456789"/>
     <!--querying and storing result statement in rs-->
@@ -38,7 +40,11 @@
             <c:redirect url = "index.jsp"/>
         </c:otherwise>
     </c:choose>
+    <!-- bestway
+         <sql:query var = "rs" dataSource="${db}">select * from "LoginDatabase" where username = '${param.username}' and password = '${param.password}'';</sql:query>
 
+         <c:if test = "${rs.next()}">...
+    -->
     String
 </body>
 </html>
