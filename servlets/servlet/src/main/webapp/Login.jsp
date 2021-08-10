@@ -19,7 +19,7 @@
     <!--the DAO is just a java class that access the data base and if credentials are correct returns a boolean true-->
     <!--Setting database-->
     <sql:setDataSource var ="db" driver ="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/videos_test" user = "postgres" password = "0123456789"/>
-    <!--querying and storing result statement in rs-->
+    <!--querying and storing result statement in rs, ${param.username} needs preprocessing to avoid sql injection-->
     <sql:query var = "rs" dataSource="${db}">select * from "LoginDatabase" where username = '${param.username}';</sql:query>
     <!--Extracting-->
     ${rs.rows[0].username}
